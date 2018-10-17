@@ -1,0 +1,14 @@
+image: selenium/node-chrome:latest
+
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script: npx ng build --prod
+
+# test:
+#  stage: test
+#  script: npx ng
