@@ -14,4 +14,6 @@ build:
 test:
   stage: test
   script:
+    - ls
+    - npm install
     - xvfb-run npx ng e2e
