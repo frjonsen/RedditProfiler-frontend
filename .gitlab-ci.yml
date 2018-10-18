@@ -1,4 +1,4 @@
-image: hortonworks/cloudbreak-web-e2e:latest
+image: vakz/node-firefox-e2e-aws-eb:latest
 
 stages:
   - build
@@ -13,4 +13,5 @@ build:
 
 test:
   stage: test
-  script: npx ng e2e
+  script:
+    - xvfb-run npx ng e2e
