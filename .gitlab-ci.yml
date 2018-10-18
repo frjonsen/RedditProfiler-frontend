@@ -16,4 +16,5 @@ test:
   script:
     - ls
     - npm install
+    - npx webdriver-manager update
     - xvfb-run npx ng e2e
