@@ -7,7 +7,9 @@ stages:
 
 build:
   stage: build
-  script: npx ng build --prod
+  script:
+    - npm install
+    - npx ng build --prod
 
 test:
   stage: test
