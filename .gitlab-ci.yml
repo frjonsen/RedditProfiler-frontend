@@ -18,4 +18,4 @@ deploy:
     - npm install
     - npx ng build --prod
     - aws s3 rm s3://redditprofiler-frontend --recursive
-    - aws s3 cp ./dist/redditprofiler-frontend s3://redditprofiler-frontend --recursive -acl public-read
+    - aws s3 cp ./dist/redditprofiler-frontend s3://redditprofiler-frontend --recursive --acl public-read
