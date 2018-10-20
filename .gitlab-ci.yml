@@ -1,15 +1,8 @@
 image: vakz/node-firefox-e2e-aws-eb:latest
 
 stages:
-  - build
   - test
-#  - deploy
-
-build:
-  stage: build
-  script:
-    - npm install
-    - npx ng build --prod
+  - deploy
 
 test:
   stage: test
@@ -18,3 +11,9 @@ test:
     - npm install
     - npx webdriver-manager update
     - xvfb-run npx ng e2e
+
+deploy:
+  stage: deploy
+  script:
+    - npx ng build --prod
+    - aws s3 cp ./dist/redditprofiler-frontend s3://redditprofiler-frontend --recursive
