@@ -15,5 +15,6 @@ test:
 deploy:
   stage: deploy
   script:
+    - npm install
     - npx ng build --prod
     - aws s3 cp ./dist/redditprofiler-frontend s3://redditprofiler-frontend --recursive
